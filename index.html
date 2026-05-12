@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cirkular – Hormoncoaching für Frauen</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo" aria-label="cirkular Startseite">
+      <img src="img/logo.png" alt="cirkular Logo">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">Über Emilia</a></li>
+      <li><a href="#zyklus">Zyklus</a></li>
+      <li><a href="#angebot">Angebot</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontakt" class="nav-cta">Gespräch buchen</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <span class="mobile-menu-tagline">Menü</span>
+    <ul>
+      <li><a href="#about">Über Emilia</a></li>
+      <li><a href="#zyklus">Zyklus</a></li>
+      <li><a href="#angebot">Angebot</a></li>
+      <li><a href="#erfahrungen">Erfahrungen</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontakt" class="mobile-cta">Gespräch buchen</a></li>
+    </ul>
+  </aside>
+
+  <section class="hero">
+    <div class="hero-text">
+      <span class="hero-tagline reveal">Hormoncoaching · Zürich</span>
+
+      <h1 class="reveal reveal-delay-1">
+        Alles dreht sich um deinen<br>
+        <span>natürlichen Rhythmus</span>
+      </h1>
+
+      <p class="hero-sub reveal reveal-delay-2">
+        Verstehe deinen Zyklus, bringe deine Hormone ins Gleichgewicht und lebe im Einklang mit deinem Körper – mit fundiertem Wissen und persönlicher Begleitung.
+      </p>
+
+      <div class="hero-buttons reveal reveal-delay-3">
+        <a href="#kontakt" class="btn-primary">Kostenloses Erstgespräch</a>
+        <a href="#angebot" class="btn-outline">Mehr erfahren</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap reveal reveal-delay-2">
+      <img src="img/beratungs-gespraech.png" alt="Beratungsgespräch bei cirkular">
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat reveal">
+      <span class="stat-number" data-target="28">0</span>
+      <span class="stat-label">Tage im Zyklus</span>
+    </div>
+    <div class="stat reveal reveal-delay-1">
+      <span class="stat-number" data-target="4">0</span>
+      <span class="stat-label">Zyklusphasen</span>
+    </div>
+    <div class="stat reveal reveal-delay-2">
+      <span class="stat-number" data-target="100" data-suffix="%">0%</span>
+      <span class="stat-label">Ganzheitlich</span>
+    </div>
+    <div class="stat reveal reveal-delay-3">
+      <span class="stat-number">1:1</span>
+      <span class="stat-label">Persönliches Coaching</span>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <div class="about-image reveal">
+      <img src="img/emilia-silva.avif" alt="Emilia Silva von cirkular">
+    </div>
+
+    <div class="about-content reveal reveal-delay-1">
+      <span class="section-label">Über cirkular</span>
+      <h2 class="section-title">Coaching mit medizinischem Fundament</h2>
+
+      <p class="section-text">
+        cirkular wurde von Emilia Silva gegründet – einer Coachin mit medizinischer Grundbildung und einem ganzheitlichen Ansatz. Ihr Ziel ist es, Frauen dabei zu unterstützen, ihren natürlichen Zyklus besser zu verstehen, Beschwerden ganzheitlich zu betrachten und langfristig mehr Balance zu finden.
+      </p>
+
+      <div class="about-points">
+        <div class="about-point">
+          <h3>Fundiertes Wissen</h3>
+          <p>Verständliche Informationen statt oberflächlicher Social-Media-Mythen.</p>
+        </div>
+
+        <div class="about-point">
+          <h3>Ganzheitlicher Ansatz</h3>
+          <p>Ernährung, Lifestyle, Stress und hormonelle Balance werden gemeinsam betrachtet.</p>
+        </div>
+
+        <div class="about-point">
+          <h3>Auf Augenhöhe</h3>
+          <p>Ein geschützter Raum für ehrliche Fragen, persönliche Themen und individuelle Begleitung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="phases" id="zyklus">
+    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto;">
+      <span class="section-label">Dein Zyklus</span>
+      <h2 class="section-title">Die vier Phasen deines natürlichen Rhythmus</h2>
+      <p class="section-text" style="margin:0 auto;">Jede Zyklusphase bringt eigene Energie, Bedürfnisse und Möglichkeiten mit sich. cirkular hilft dir, diese zu kennen und zu nutzen.</p>
+    </div>
+
+    <div class="phases-grid">
+      <article class="phase-card reveal">
+        <div class="phase-number">01</div>
+        <div class="phase-name">Menstruation</div>
+        <p class="phase-desc">Zeit der Ruhe und Reflexion. Dein Körper baut sich ab – gib dir Raum für Erholung und Selbstfürsorge.</p>
+        <p class="phase-tip">Tipp: Warme Speisen, eisenreiche Lebensmittel und sanfte Bewegung.</p>
+      </article>
+      <article class="phase-card reveal reveal-delay-1">
+        <div class="phase-number">02</div>
+        <div class="phase-name">Follikelphase</div>
+        <p class="phase-desc">Energie kehrt zurück. Ideal für neue Projekte, Sport und kreative Impulse – dein Östrogen steigt.</p>
+        <p class="phase-tip">Tipp: Starte Neues, plane intensive Workouts und nutze deine Lernfähigkeit.</p>
+      </article>
+      <article class="phase-card reveal reveal-delay-2">
+        <div class="phase-number">03</div>
+        <div class="phase-name">Ovulation</div>
+        <p class="phase-desc">Dein Höhepunkt. Kommunikation, Ausstrahlung und Energie auf dem Maximum – nutze diese Phase bewusst.</p>
+        <p class="phase-tip">Tipp: Wichtige Gespräche, Präsentationen oder Social Events – jetzt strahlst du.</p>
+      </article>
+      <article class="phase-card reveal reveal-delay-3">
+        <div class="phase-number">04</div>
+        <div class="phase-name">Lutealphase</div>
+        <p class="phase-desc">Zeit der Vertiefung. Fokus nach innen, strukturierte Aufgaben und gezielte Selbstpflege stehen im Vordergrund.</p>
+        <p class="phase-tip">Tipp: Magnesiumreiche Ernährung, weniger Koffein, mehr Schlaf und Ruhe.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="lifestyle">
+    <div class="lifestyle-text reveal">
+      <span class="section-label">Ernährung & Lifestyle</span>
+      <h2 class="section-title">Ernährung beeinflusst mehr, als viele denken.</h2>
+
+      <p class="section-text">
+        Mit der richtigen Ernährung, ausreichend Schlaf und gezielten Stressmanagement-Ansätzen kannst du deine Hormone unterstützen und mehr Energie in deinen Alltag bringen.
+      </p>
+    </div>
+
+    <div class="image-grid reveal reveal-delay-1">
+      <img src="img/ausgewogene-bowl.png" alt="Ausgewogene Bowl">
+      <img src="img/eier.png" alt="Eier als Ernährungssymbol">
+      <img src="img/fruechte-und-gemuese.png" alt="Früchte und Gemüse">
+    </div>
+  </section>
+
+  <section class="offer" id="angebot">
+    <div class="offer-intro reveal">
+      <span class="section-label">Angebot</span>
+      <h2 class="section-title">Begleitung, die zu dir passt.</h2>
+      <p class="section-text">
+        Von der ersten Orientierung bis zur langfristigen Begleitung – cirkular unterstützt dich auf deinem Weg zu mehr hormoneller Balance.
+      </p>
+    </div>
+
+    <div class="offer-grid">
+      <article class="offer-card reveal">
+        <h3>Kennenlerngespräch</h3>
+        <div class="price">Kostenlos</div>
+        <p>Ein erstes Gespräch, um deine Situation, Ziele und Fragen kennenzulernen.</p>
+
+        <ul>
+          <li>30 Minuten</li>
+          <li>Online oder in Zürich</li>
+          <li>Unverbindlich</li>
+        </ul>
+
+        <a href="#kontakt" class="offer-link">Gespräch buchen →</a>
+      </article>
+
+      <article class="offer-card featured reveal reveal-delay-1">
+        <span class="offer-badge">Empfehlung</span>
+        <h3>Hormoncoaching</h3>
+        <div class="price">CHF 140 / Sitzung</div>
+        <p>Tiefgehendes 1:1 Coaching rund um deinen Zyklus, Ernährung, Lifestyle und hormonelle Balance.</p>
+
+        <ul>
+          <li>Individuelle Begleitung</li>
+          <li>Ernährungs- & Lifestyle-Tipps</li>
+          <li>Zyklusverständnis</li>
+          <li>Medizinisch fundiertes Wissen</li>
+        </ul>
+
+        <a href="#kontakt" class="offer-link">Mehr erfahren →</a>
+      </article>
+
+      <article class="offer-card reveal reveal-delay-2">
+        <h3>Langzeitbegleitung</h3>
+        <div class="price">ab CHF 490</div>
+        <p>Für Frauen, die langfristig an ihrer hormonellen Gesundheit arbeiten möchten.</p>
+
+        <ul>
+          <li>Mehrere Monate Begleitung</li>
+          <li>Regelmässige Check-ins</li>
+          <li>Nachhaltige Veränderung</li>
+        </ul>
+
+        <a href="#kontakt" class="offer-link">Mehr erfahren →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="experiences" id="erfahrungen">
+    <div class="experience-layout">
+      <div class="reveal">
+        <span class="section-label">Erfahrungen aus dem Coaching</span>
+        <h2 class="section-title">Echte Erfahrungen. Echte Veränderungen.</h2>
+      </div>
+
+      <div class="experience-grid">
+        <div class="experience-card reveal reveal-delay-1">
+          <div class="quote-mark">“</div>
+          <p>Endlich verstehe ich meinen Körper und habe gelernt, im Einklang mit mir selbst zu leben.</p>
+          <small>Laura, 28 · Zürich</small>
+        </div>
+
+        <div class="experience-card reveal reveal-delay-2">
+          <div class="quote-mark">“</div>
+          <p>Ich dachte jahrelang, PMS sei einfach normal. Heute weiss ich, was mein Körper braucht.</p>
+          <small>Sara, 34 · Winterthur</small>
+        </div>
+
+        <div class="experience-card reveal reveal-delay-3">
+          <div class="quote-mark">“</div>
+          <p>Wissenschaftlich fundiert, empathisch und auf Augenhöhe. Genau das, was ich gesucht habe.</p>
+          <small>Nina, 41 · Luzern</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="faq-intro reveal">
+      <span class="section-label">Häufige Fragen</span>
+      <h2 class="section-title">Antworten auf typische Fragen</h2>
+      <p class="section-text">
+        Du fragst dich, ob Hormoncoaching das Richtige für dich ist? Hier findest du Antworten auf die häufigsten Fragen.
+      </p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary>
+          Wie läuft das Erstgespräch ab?
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </summary>
+        <div class="faq-answer">
+          Das kostenlose Erstgespräch dauert rund 30 Minuten und findet online oder in Zürich statt. Wir sprechen über deine aktuelle Situation, deine Ziele und ob ein Coaching für dich passt – unverbindlich und in einem geschützten Rahmen.
+        </div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-1">
+        <summary>
+          Brauche ich Vorwissen über meinen Zyklus?
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </summary>
+        <div class="faq-answer">
+          Nein, du musst nichts mitbringen ausser Offenheit. Wir starten genau da, wo du stehst. Ob du dich schon intensiv mit deinem Zyklus beschäftigt hast oder ganz neu beginnst – das Coaching wird individuell auf dich abgestimmt.
+        </div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-2">
+        <summary>
+          Ist das Coaching medizinisch anerkannt?
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </summary>
+        <div class="faq-answer">
+          cirkular ist ein ganzheitliches Coaching mit medizinisch fundiertem Wissen, jedoch ersetzt es keine ärztliche Behandlung oder Diagnose. Bei körperlichen Beschwerden empfehle ich dir immer, parallel deine Ärztin oder deinen Arzt zu konsultieren.
+        </div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-3">
+        <summary>
+          Wie viele Sitzungen brauche ich?
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </summary>
+        <div class="faq-answer">
+          Das hängt ganz von deinem Ziel ab. Manche Frauen profitieren bereits von 1–2 Sitzungen, andere wünschen sich eine längere Begleitung über mehrere Monate. Im Erstgespräch finden wir gemeinsam heraus, was für dich am sinnvollsten ist.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta-section" id="kontakt">
+    <svg class="cta-logo" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="50" cy="55" r="40" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="50" cy="55" r="20" stroke="#fff" stroke-width="1"/>
+    </svg>
+    <h2 class="reveal">Bereit, deinen Rhythmus zu verstehen?</h2>
+    <p class="reveal reveal-delay-1">Buche jetzt dein kostenloses Kennenlerngespräch mit Emilia Silva und starte deine Reise zur hormonellen Balance.</p>
+    <a href="mailto:hello@cirkular.ch" class="btn-white reveal reveal-delay-2">Jetzt kostenloses Gespräch buchen</a>
+  </section>
+
+  <footer>
+    <a href="#" class="footer-logo" aria-label="cirkular Startseite">
+      <img src="img/logo.png" alt="cirkular Logo">
+      <span>cirkular</span>
+    </a>
+
+    <div class="footer-links">
+      <a href="#about">Über Emilia</a>
+      <a href="#angebot">Angebot</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://instagram.com/cirkular.ch" target="_blank" rel="noopener noreferrer" aria-label="cirkular auf Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:hello@cirkular.ch" aria-label="E-Mail an cirkular">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
