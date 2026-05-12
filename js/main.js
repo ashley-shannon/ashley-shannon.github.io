@@ -49,6 +49,35 @@
     }
   });
 
+  // ── HERO H1: WORD-BY-WORD SPLIT ──
+  const heroH1 = document.querySelector('.hero h1');
+  if (heroH1) {
+    let counter = 0;
+    (function walk(node) {
+      Array.from(node.childNodes).forEach(function (child) {
+        if (child.nodeType === Node.TEXT_NODE) {
+          const parts = child.textContent.split(/(\s+)/);
+          const frag = document.createDocumentFragment();
+          parts.forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) {
+              frag.appendChild(document.createTextNode(part));
+            } else {
+              const span = document.createElement('span');
+              span.className = 'word';
+              span.style.setProperty('--i', counter++);
+              span.textContent = part;
+              frag.appendChild(span);
+            }
+          });
+          child.parentNode.replaceChild(frag, child);
+        } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== 'BR') {
+          walk(child);
+        }
+      });
+    })(heroH1);
+  }
+
   // ── INTERSECTION OBSERVER (REVEAL) ──
   const revealEls = document.querySelectorAll('.reveal');
 
@@ -110,6 +139,38 @@
     statsSection.querySelectorAll('.stat-number[data-target]').forEach(function (el) {
       el.textContent = el.dataset.target + (el.dataset.suffix || '');
     });
+  }
+
+  // ── SCROLL-SPY (highlight active nav link) ──
+  const navAnchors = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  const spyTargets = navAnchors
+    .map(function (a) {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return null;
+      const section = document.getElementById(id);
+      return section ? { anchor: a, section: section } : null;
+    })
+    .filter(Boolean);
+
+  if (spyTargets.length && 'IntersectionObserver' in window) {
+    const visible = new Set();
+    const spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) visible.add(entry.target);
+        else visible.delete(entry.target);
+      });
+      let topMost = null;
+      let topMostY = Infinity;
+      visible.forEach(function (sec) {
+        const y = sec.getBoundingClientRect().top;
+        if (y < topMostY) { topMostY = y; topMost = sec; }
+      });
+      spyTargets.forEach(function (t) {
+        t.anchor.classList.toggle('active', t.section === topMost);
+      });
+    }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+
+    spyTargets.forEach(function (t) { spy.observe(t.section); });
   }
 
   // ── PHASE CARDS (tap to toggle on touch devices) ──

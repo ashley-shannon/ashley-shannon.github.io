@@ -130,6 +130,29 @@ nav {
   color: var(--primary);
 }
 
+.nav-links a:not(.nav-cta) {
+  position: relative;
+}
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-links a.active:not(.nav-cta) {
+  opacity: 1;
+  color: var(--primary);
+}
+.nav-links a.active:not(.nav-cta)::after {
+  transform: scaleX(1);
+}
+
 .nav-cta {
   background: var(--primary);
   color: var(--white) !important;
@@ -362,8 +385,28 @@ body.menu-open .menu-backdrop {
   margin-bottom: 1.8rem;
 }
 
-.hero h1 span {
+.hero h1 span:not(.word) {
   color: var(--primary);
+}
+
+.hero h1.reveal {
+  opacity: 1;
+  transform: none;
+}
+.hero h1 .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.55em);
+  transition: opacity 0.6s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--i, 0) * 70ms + 150ms);
+  will-change: opacity, transform;
+}
+.hero h1.is-visible .word {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .word { opacity: 1; transform: none; transition: none; }
 }
 
 .hero-sub {
@@ -520,7 +563,42 @@ section {
 }
 
 /* ── ZYKLUSPHASEN ── */
-.phases { background: var(--bg); }
+.phases {
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.cycle-ring {
+  position: absolute;
+  top: 3rem;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  opacity: 0.75;
+  pointer-events: none;
+  animation: cycle-rotate 90s linear infinite;
+}
+.cycle-ring .dot:nth-child(2) { fill: rgba(152, 25, 20, 0.55); }
+.cycle-ring .dot:nth-child(3) { fill: rgba(217, 159, 145, 0.7); }
+.cycle-ring .dot:nth-child(4) { fill: rgba(152, 25, 20, 0.4); }
+.cycle-ring .dot:nth-child(5) { fill: rgba(217, 199, 187, 0.85); }
+
+@keyframes cycle-rotate {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cycle-ring { animation: none; }
+}
+@media (max-width: 620px) {
+  .cycle-ring {
+    width: 180px;
+    height: 180px;
+    top: 1.5rem;
+    right: -70px;
+    opacity: 0.55;
+  }
+}
 
 .phases-grid {
   display: grid;
