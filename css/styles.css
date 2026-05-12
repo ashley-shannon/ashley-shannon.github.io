@@ -1123,6 +1123,36 @@ footer {
   .nav-toggle {
     display: block;
   }
+
+  /* Mobile: kein Bar-Hintergrund, stattdessen schwebende Pill + Hamburger */
+  nav {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+  }
+  .nav-logo {
+    background: rgba(247, 243, 238, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.85rem;
+    box-shadow: 0 4px 14px rgba(100, 15, 12, 0.08);
+    border: 1px solid rgba(152, 25, 20, 0.10);
+  }
+  .nav-toggle {
+    background: rgba(247, 243, 238, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0.85rem;
+    box-shadow: 0 4px 14px rgba(100, 15, 12, 0.08);
+    border: 1px solid rgba(152, 25, 20, 0.10);
+  }
+  body.menu-open .nav-toggle {
+    background: transparent;
+    box-shadow: none;
+    border-color: transparent;
+  }
 }
 
 @media (max-width: 620px) {
