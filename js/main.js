@@ -112,6 +112,18 @@
     });
   }
 
+  // ── PHASE CARDS (tap to toggle on touch devices) ──
+  if (window.matchMedia('(hover: none)').matches) {
+    const phaseCards = document.querySelectorAll('.phase-card');
+    phaseCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        const wasOpen = card.classList.contains('is-open');
+        phaseCards.forEach(function (other) { other.classList.remove('is-open'); });
+        if (!wasOpen) card.classList.add('is-open');
+      });
+    });
+  }
+
   // ── FAQ ACCORDION (single open) ──
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(function (item) {

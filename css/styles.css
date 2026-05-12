@@ -539,10 +539,15 @@ section {
   border: 1px solid transparent;
   cursor: default;
 }
-.phase-card:hover {
+.phase-card:hover,
+.phase-card.is-open {
   transform: translateY(-10px);
   box-shadow: 0 22px 50px rgba(100,15,12,0.14);
   border-color: rgba(152,25,20,0.18);
+}
+
+@media (hover: none) {
+  .phase-card { cursor: pointer; }
 }
 .phase-card::before {
   content: '';
@@ -554,7 +559,8 @@ section {
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   transform-origin: left;
 }
-.phase-card:hover::before { transform: scaleX(1); }
+.phase-card:hover::before,
+.phase-card.is-open::before { transform: scaleX(1); }
 
 .phase-card::after {
   content: '';
@@ -570,7 +576,8 @@ section {
   transform: scale(0.6);
   pointer-events: none;
 }
-.phase-card:hover::after {
+.phase-card:hover::after,
+.phase-card.is-open::after {
   opacity: 1;
   transform: scale(1);
 }
@@ -583,7 +590,8 @@ section {
   margin-bottom: 0.5rem;
   transition: color 0.4s ease;
 }
-.phase-card:hover .phase-number {
+.phase-card:hover .phase-number,
+.phase-card.is-open .phase-number {
   color: rgba(152,25,20,0.18);
 }
 
@@ -615,7 +623,8 @@ section {
   padding-top: 0;
   margin-top: 0;
 }
-.phase-card:hover .phase-tip {
+.phase-card:hover .phase-tip,
+.phase-card.is-open .phase-tip {
   max-height: 120px;
   opacity: 1;
   padding-top: 1rem;
