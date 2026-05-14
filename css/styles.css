@@ -16,6 +16,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-x: clip;       /* moderne Browser: kein neuer Scroll-Kontext, harte Klippe */
 }
 
 body {
@@ -23,7 +25,9 @@ body {
   font-weight: 300;
   background: var(--bg);
   color: var(--dark);
+  width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
 }
 
@@ -831,6 +835,8 @@ h3.phase-name {
   -ms-overflow-style: none;         /* IE/Edge legacy */
   padding-bottom: 0.5rem;           /* etwas Luft für Hover-Lift */
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;   /* Bounce-Geste bleibt im Karussell */
+  touch-action: pan-x;              /* vertikales Wischen geht an Body, horizontal an Track */
 }
 .carousel-track::-webkit-scrollbar {
   display: none;                    /* Chrome/Safari */
