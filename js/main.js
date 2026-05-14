@@ -103,7 +103,7 @@
   function animateCount(el) {
     const target = parseInt(el.dataset.target, 10);
     const suffix = el.dataset.suffix || '';
-    const duration = 1800;
+    const duration = 5000;
     const startTime = performance.now();
 
     function tick(now) {
@@ -181,6 +181,25 @@
         const wasOpen = card.classList.contains('is-open');
         phaseCards.forEach(function (other) { other.classList.remove('is-open'); });
         if (!wasOpen) card.classList.add('is-open');
+      });
+    });
+  }
+
+  // ── EXPERIENCE CAROUSEL ──
+  const carouselTrack = document.querySelector('.carousel-track');
+  const carouselBtns = document.querySelectorAll('.carousel-btn');
+  if (carouselTrack && carouselBtns.length) {
+    carouselBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const card = carouselTrack.querySelector('.experience-card');
+        if (!card) return;
+        const cardWidth = card.getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(carouselTrack).columnGap || getComputedStyle(carouselTrack).gap) || 0;
+        const dir = parseInt(btn.dataset.carouselDir, 10) || 1;
+        carouselTrack.scrollBy({
+          left: (cardWidth + gap) * dir,
+          behavior: 'smooth'
+        });
       });
     });
   }
